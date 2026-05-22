@@ -768,8 +768,8 @@ section {
   <div class="letter-wrap fi" id="letterCard">
     <p class="letter-body" id="letterBody"></p>
     <div class="letter-sig" id="letterSig" style="opacity:0;transition:opacity 1s ease .5s;">
-      <p>Con todo mi amor y mucho más,</p>
-      <p><em>Tu persona favorita ❤️</em></p>
+      <p>Te amo con todo mi ser y mi espíritu,</p>
+      <p><em>De tu novio hermoso ❤️❤️</em></p>
     </div>
   </div>
 </section>
@@ -786,7 +786,7 @@ section {
 
       <div class="tl-item">
         <div class="tl-card">
-          <p class="tl-date">✨ El principio • Agosto 2023</p>
+          <p class="tl-date">✨ Agosto 2024</p>
           <h3>El Inicio</h3>
           <p>El universo supo exactamente cuándo tenía que cruzar nuestros caminos. Ese día cambió todo, para siempre.</p>
         </div>
@@ -798,7 +798,7 @@ section {
         <div class="tl-spacer"></div>
         <div class="tl-dot" aria-hidden="true"></div>
         <div class="tl-card">
-          <p class="tl-date">🎉 Nuestro aniversario • Agosto 2024</p>
+          <p class="tl-date">🎉 Agosto 2025</p>
           <h3>Primer Año Juntos</h3>
           <p>Doce meses de risas, abrazos, conversaciones que no querían terminar, y un amor que fue creciendo cada día.</p>
         </div>
@@ -806,9 +806,9 @@ section {
 
       <div class="tl-item">
         <div class="tl-card">
-          <p class="tl-date">❤️ Hoy • 23 de Mayo 2025</p>
+          <p class="tl-date">❤️ Hoy • 23 de Mayo 2026</p>
           <h3>Mesiversario 1.9</h3>
-          <p>Un año y nueve meses llenos de magia. Hoy el universo nos regala dos celebraciones en un solo día.</p>
+          <p>Un año y nueve meses llenos de magia. Y muchas chamburguesas.</p>
         </div>
         <div class="tl-dot today" aria-hidden="true"></div>
         <div class="tl-spacer"></div>
@@ -929,7 +929,7 @@ section {
     </h2>
     <p class="closing-sub">
       Que este día esté lleno de la misma magia que tú le das a cada uno de los míos.<br>
-      Te quiero hoy, mañana y en cada capítulo que nos quede por escribir juntos. ❤️
+      Te Chiamo hoy, mañana y en cada capítulo que nos quede por escribir juntos. ❤️
     </p>
 
     <audio id="bgMusic" loop>
@@ -1008,7 +1008,24 @@ clickHeart.addEventListener('click', () => {
             mainContent.style.display = 'block';
             document.body.style.overflowY = 'auto';
             navDotsContainer.style.display = 'flex';
-            document.getElementById('lock-screen').scrollIntoView({behavior: 'smooth'});
+        document.getElementById('lock-screen').scrollIntoView({behavior: 'smooth'});
+        // Iniciar la música cuando se completa el llenado del corazón
+        try {
+          const bgAudio = document.getElementById('bgMusic');
+          const mBtn = document.getElementById('musicBtn');
+          if (bgAudio) {
+            const source = bgAudio.querySelector('source');
+            const audioSrc = source ? source.src : bgAudio.src;
+            if (audioSrc) {
+              bgAudio.play().then(() => {
+                if (mBtn) {
+                  mBtn.classList.add('playing');
+                  mBtn.innerHTML = '<i class="fa-solid fa-compact-disc" aria-hidden="true"></i> Reproduciendo… 🎵';
+                }
+              }).catch(() => {});
+            }
+          }
+        } catch(e){}
         }, 600);
     }
 });
@@ -1180,7 +1197,21 @@ PHOTOS.forEach((ph, i) => {
 /* ════════════════════════════════════════
    TYPEWRITER
 ════════════════════════════════════════ */
-const CARTA = `Mi amor,\n\nHay cosas que siempre quise escribirte, pero las palabras nunca alcanzaron a atrapar todo lo que siento. Hoy lo intento.\n\nDesde que llegaste a mi vida, los días tienen un color diferente. No es que el mundo haya cambiado —es que lo veo con los mismos ojos, pero contigo a mi lado todo adquiere un significado más profundo, más real.\n\nMe enamoré de tu risa. De la forma en que te emocionas con las cosas pequeñas. Me enamoré de tu fuerza, aunque muchas veces tú misma no la veas. Me enamoré de ti, de todo lo que eres.\n\nUn año y nueve meses pueden parecer poco para algunas personas. Pero yo sé lo que caben en ese tiempo: miles de conversaciones que no quería terminar, momentos que guardo en el lugar más especial de mi memoria, y una certeza cada vez más grande: elegirte fue lo mejor que me pudo pasar.\n\nGracias por ser tú. Por cada vez que me escuchaste, por cada vez que me acompañaste sin que te lo pidiera, por cada momento compartido.\n\nHoy es tu día. Y espero que sepas que no hay nadie en este mundo que se lo merezca más.\n\n¡Feliz cumpleaños, princesa! ❤️`;
+const CARTA = `Mi ñamor
+
+Hoy es un día muy especial y mágico, es tu cumpleaños número 18 y nuestro cumple mes 1.9. Espero que este día sea inolvidable. Te amo con todo mi corazón.
+
+Sé que nunca te hice una carta porque se me hace muy difícil expresar lo que siento por vos en palabras, pero acá estoy, hace un día escribiéndote esta. Ñamor, el amor que siento por vos ni te lo podés imaginar, los días que paso con vos tienen un color diferente, me hacés la vida más hermosa.
+
+Un año y nueve meses podría ser poco para algunos, pero para mí fueron los mejores momentos, las mejores risas y la mejor compañía de amor puro. Elegirte fue lo mejor que me pudo pasar en la vida.
+
+Me enamoré de tu risa, me enamoré de tu fuerza, me enamoré de tu forma de amar, me enamoré de tu carita hermosa, me enamoré de tu forma de ser. Me enamoré de vos, de todo lo que sos.
+
+Gracias por ser vos. Por cada vez que estuviste ahí para mí, por acompañarme sin que te lo pidiera y por amarme tanto.
+
+Hoy es tu día, y no hay nadie más en este mundo que se lo merezca más que vos, mi ñamor.
+
+Feliz cumpleaños y feliz cumple mes. ❤️❤️`;
 
 let twStarted = false;
 
